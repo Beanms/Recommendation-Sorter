@@ -20,7 +20,9 @@ def initialise():
     global bookSE
     global bookSI
 
+    global hobby
 
+    global project
 
     try:
         f = open("filmLA.txt", "rb")
@@ -149,6 +151,29 @@ def initialise():
     finally:
         f.close()
 
+
+
+    try:
+        f = open("hobby.txt", "rb")
+        hobby = pickle.load(f)
+    except:
+        hobby = []
+        f = open("hobby.txt", "wb")
+        pickle.dump(hobby, f)
+    finally:
+        f.close()
+
+
+
+    try:
+        f = open("project.txt", "rb")
+        project = pickle.load(f)
+    except:
+        project = []
+        f = open("project.txt", "wb")
+        pickle.dump(project, f)
+    finally:
+        f.close()
 
 
 def mainMenu():
@@ -373,6 +398,58 @@ Change Name:
             saveArray(bookSI, "bookSI")
             mainMenu()
         elif bookOption == "5" or bookOption.upper() == "BACK":
+            addRec()
+
+def hobby():
+    name = input("""
+Add Name:
+> """)
+    
+    while True:
+        print(f"""
+1. Current Name: {name}
+2. Save
+3. Back""")
+
+        hobbyOption = input(">")
+
+        if hobbyOption == "1" or hobbyOption.upper() == "NAME":
+            name = input("""
+Change Name:
+> """)
+            hobbyOption = input(">")
+        elif hobbyOption == "2" or hobbyOption.upper() == "SAVE":
+            saveName(name, "Hobby")
+            hobby.append(name)
+            saveArray(hobby, "hobby")
+            mainMenu()
+        elif hobbyOption == "3" or hobbyOption.upper() == "BACK":
+            addRec()
+
+def project():
+    name = input("""
+Add Name:
+> """)
+    
+    while True:
+        print(f"""
+1. Current Name: {name}
+2. Save
+3. Back""")
+
+        projectOption = input(">")
+
+        if projectOption == "1" or projectOption.upper() == "NAME":
+            name = input("""
+Change Name:
+> """)
+            projectOption = input(">")
+        elif projectOption == "2" or projectOption.upper() == "SAVE":
+            saveName(name, "Project")
+            project.append(name)
+            saveArray(project, "project")
+            mainMenu()
+        elif projectOption == "3" or projectOption.upper() == "BACK":
             addRec()
 
 initialise()
