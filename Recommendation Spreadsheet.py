@@ -19,6 +19,7 @@ def initialise():
     global bookAU
     global bookSE
     global bookSI
+    global bookNS
 
     global hobby
 
@@ -182,30 +183,33 @@ def initialise():
 
 def mainMenu():
     print("""
-1. Add
-2. Edit
-3. Progress
-4. Comment
-5. Rate
-6. Remove
-7. Exit""")
+1. View
+2. Add
+3. Edit
+4. Progress
+5. Comment
+6. Rate
+7. Remove
+8. Exit""")
     
     while True:
         option = input("> ")
 
-        if option == "1" or option.upper() == "ADD":
+        if option == "1" or option.upper() == "VIEW":
+            viewRec()
+        elif option == "2" or option.upper() == "ADD":
             addRec()
-        elif option == "2" or option.upper() == "EDIT":
+        elif option == "3" or option.upper() == "EDIT":
             editRec()
-        elif option == "3" or option.upper() == "PROGRESS":
+        elif option == "4" or option.upper() == "PROGRESS":
             addProg()
-        elif option == "4" or option.upper() == "COMMENT":
+        elif option == "5" or option.upper() == "COMMENT":
             addCom()
-        elif option == "5" or option.upper() == "RATE":
+        elif option == "6" or option.upper() == "RATE":
             rateRec()
-        elif option == "6" or option.upper() == "REMOVE":
+        elif option == "7" or option.upper() == "REMOVE":
             removeRec()
-        elif option == "7" or option.upper() == "EXIT":
+        elif option == "8" or option.upper() == "EXIT":
             exit()
         elif option.upper() == "KILL":
             path = r"C:\Users\dylan\Rec files\\"
@@ -217,8 +221,201 @@ def mainMenu():
             mainMenu()
             
 
+def viewRec():
+    print("""
+View:
+1. Film
+2. Series
+3. Music
+4. Book
+5. Hobby
+6. Project
+7. Back""")
+    
+    while True:
+        viewOption = input("> ")
+
+        if viewOption == "1" or viewOption.upper() == "FILM":
+            filmView()
+            mainMenu()
+        elif viewOption == "2" or viewOption.upper() == "SERIES":
+            seriesView()
+            mainMenu()
+        elif viewOption == "3" or viewOption.upper() == "MUSIC":
+            musicView()
+            mainMenu()
+        elif viewOption == "4" or viewOption.upper() == "BOOK":
+            bookView()
+            mainMenu()
+        elif viewOption == "5" or viewOption.upper() == "HOBBY":
+            hobbyView()
+            mainMenu()
+        elif viewOption == "6" or viewOption.upper() == "PROJECT":
+            projectView()
+            mainMenu()
+        elif viewOption == "7" or viewOption.upper() == "BACK":
+            mainMenu()
+
+def filmView():
+    print(f"""
+Film:
+1. Live Action
+2. Animated
+3. Not Sure
+4. Back""")
+
+    fViewOption = input("> ")
+
+    if fViewOption == "1" or fViewOption.upper() == "LIVE ACTION":
+        for x in filmLA:
+            i = 1
+            print(f"{i}. {x}")
+            i += 1
+    elif fViewOption == "2" or fViewOption.upper() == "ANIMATED":
+        for x in filmA:
+            i = 1
+            print(f"{i}. {x}")
+            i += 1
+    elif fViewOption == "3" or fViewOption.upper() == "NOT SURE":
+        for x in filmNS:
+            i = 1
+            print(f"{i}. {x}")
+            i += 1
+    elif fViewOption == "4" or fViewOption.upper() == "BACK":
+        viewRec()
+
+def seriesView():
+    print(f"""
+Series:
+1. Live Action
+2. Animated
+3. Not Sure
+4. Back""")
+
+    sViewOption = input("> ")
+
+    if sViewOption == "1" or sViewOption.upper() == "LIVE ACTION":
+        for x in seriesLA:
+            i = 1
+            print(f"{i}. {x}")
+            i += 1
+    elif sViewOption == "2" or sViewOption.upper() == "ANIMATED":
+        for x in seriesA:
+            i = 1
+            print(f"{i}. {x}")
+            i += 1
+    elif sViewOption == "3" or sViewOption.upper() == "NOT SURE":
+        for x in seriesNS:
+            i = 1
+            print(f"{i}. {x}")
+            i += 1
+    elif sViewOption == "4" or sViewOption.upper() == "BACK":
+        viewRec()
+
+def musicView():
+    print(f"""
+Music:
+1. Artist
+2. Album
+3. Single
+4. Not Sure
+5. Back""")
+
+    mViewOption = input("> ")
+
+    if mViewOption == "1" or mViewOption.upper() == "ARTIST":
+        for x in musicAR:
+            i = 1
+            print(f"{i}. {x}")
+            i += 1
+    elif mViewOption == "2" or mViewOption.upper() == "ALBUM":
+        for x in musicAL:
+            i = 1
+            print(f"{i}. {x}")
+            i += 1
+    elif mViewOption == "3" or mViewOption.upper() == "SINGLE":
+        for x in musicS:
+            i = 1
+            print(f"{i}. {x}")
+            i += 1
+    elif mViewOption == "4" or mViewOption.upper() == "NOT SURE":
+        for x in musicNS:
+            i = 1
+            print(f"{i}. {x}")
+            i += 1
+    elif mViewOption == "5" or mViewOption.upper() == "BACK":
+        viewRec()
+
+def bookView():
+    print(f"""
+Book:
+1. Author
+2. Series
+3. Single
+4. Not Sure
+5. Back""")
+
+    bViewOption = input("> ")
+
+    if bViewOption == "1" or bViewOption.upper() == "AUTHOR":
+        for x in bookAU:
+            i = 1
+            print(f"{i}. {x}")
+            i += 1
+    elif bViewOption == "2" or bViewOption.upper() == "SERIES":
+        for x in bookSE:
+            i = 1
+            print(f"{i}. {x}")
+            i += 1
+    elif bViewOption == "3" or bViewOption.upper() == "SINGLE":
+        for x in bookSI:
+            i = 1
+            print(f"{i}. {x}")
+            i += 1
+    elif bViewOption == "4" or bViewOption.upper() == "NOT SURE":
+        for x in bookNS:
+            i = 1
+            print(f"{i}. {x}")
+            i += 1
+    elif bViewOption == "5" or bViewOption.upper() == "BACK":
+        viewRec()
+
+def hobbyView():
+    print(f"""
+Hobby:
+1. Hobby
+2. Back""")
+
+    hViewOption = input("> ")
+
+    if hViewOption == "1" or hViewOption.upper() == "HOBBY":
+        for x in hobby:
+            i = 1
+            print(f"{i}. {x}")
+            i += 1
+    elif hViewOption == "2" or hViewOption.upper() == "BACK":
+        viewRec()
+
+def projectView():
+    print(f"""
+Project:
+1. Project
+2. Back""")
+
+    pViewOption = input("> ")
+
+    if pViewOption == "1" or pViewOption.upper() == "PROJECT":
+        for x in project:
+            i = 1
+            print(f"{i}. {x}")
+            i += 1
+    elif pViewOption == "2" or pViewOption.upper() == "BACK":
+        viewRec()
+
+
 def addRec():
     print("""
+Add:
 1. Film
 2. Series
 3. Music
@@ -249,41 +446,34 @@ def saveArray(type, file):
     f = open(r"C:\Users\dylan\Rec files\\" + f"{file}.txt", "wb")
     pickle.dump(type, f)
     f.close()
-
-def saveName(name, type):
-    f = open(r"C:\Users\dylan\Rec files\\" + f"{type}.txt", "a")
-    f.write(f"{name.upper()}\n")
-    f.close()
  
 def film():
     name = input("""
-Add Name:
+Add Film Name:
 > """)
     
     while True:
         print(f"""
+Film:
 1. Current Name: {name}
 2. Live Action
 3. Animated
 4. Not Sure
 5. Back""")
 
-        filmOption = input(">")
+        filmOption = input("> ")
 
         if filmOption == "1" or filmOption.upper() == "NAME":
             film()
         elif filmOption == "2" or filmOption.upper() == "LIVE ACTION":
-            saveName(name, "Live Action Film")
             filmLA.append(name)
             saveArray(filmLA, "filmLA")
             mainMenu()
         elif filmOption == "3" or filmOption.upper() == "ANIMATED":
-            saveName(name, "Animated Film")
             filmA.append(name)
             saveArray(filmA, "filmA")
             mainMenu()
         elif filmOption == "4" or filmOption.upper() == "NOT SURE":
-            saveName(name, "Not Sure Film")
             filmNS.append(name)
             saveArray(filmNS, "filmNS")
             mainMenu()
@@ -292,33 +482,31 @@ Add Name:
 
 def series():
     name = input("""
-Add Name:
+Add Series Name:
 > """)
     
     while True:
         print(f"""
+Series:
 1. Current Name: {name}
 2. Live Action
 3. Animated
 4. Not Sure
 5. Back""")
 
-        seriesOption = input(">")
+        seriesOption = input("> ")
 
         if seriesOption == "1" or seriesOption.upper() == "NAME":
             series()
         elif seriesOption == "2" or seriesOption.upper() == "LIVE ACTION":
-            saveName(name, "Live Action Series")
             seriesLA.append(name)
             saveArray(seriesLA, "seriesLA")
             mainMenu()
         elif seriesOption == "3" or seriesOption.upper() == "ANIMATED":
-            saveName(name, "Animated Series")
             seriesA.append(name)
             saveArray(seriesA, "seriesA")
             mainMenu()
         elif seriesOption == "4" or seriesOption.upper() == "NOT SURE":
-            saveName(name, "Not Sure Series")
             seriesNS.append(name)
             saveArray(seriesNS, "seriesNS")
             mainMenu()
@@ -327,11 +515,12 @@ Add Name:
 
 def music():
     name = input("""
-Add Name:
+Add Music Name:
 > """)
     
     while True:
         print(f"""
+Music:
 1. Current Name: {name}
 2. Artist
 3. Album
@@ -339,27 +528,23 @@ Add Name:
 5. Not Sure
 6. Back""")
 
-        musicOption = input(">")
+        musicOption = input("> ")
 
         if musicOption == "1" or musicOption.upper() == "NAME":
             music()
         elif musicOption == "2" or musicOption.upper() == "ARTIST":
-            saveName(name, "Artist Music")
             musicAR.append(name)
             saveArray(musicAR, "musicAR")
             mainMenu()
         elif musicOption == "3" or musicOption.upper() == "ALBUM":
-            saveName(name, "Album Music")
             musicAL.append(name)
             saveArray(musicAL, "musicAL")
             mainMenu()
         elif musicOption == "4" or musicOption.upper() == "SINGLE":
-            saveName(name, "Single Music")
             musicS.append(name)
             saveArray(musicS, "musicS")
             mainMenu()
         elif musicOption == "5" or musicOption.upper() == "NOT SURE":
-            saveName(name, "Not Sure Music")
             musicNS.append(name)
             saveArray(musicNS, "musicNS")
             mainMenu()
@@ -368,56 +553,59 @@ Add Name:
 
 def book():
     name = input("""
-Add Name:
+Add Book Name:
 > """)
     
     while True:
         print(f"""
+Book:
 1. Current Name: {name}
-2. Live Action
-3. Animated
-4. Not Sure
-5. Back""")
+2. Author
+3. Series
+4. Single
+5. Not Sure
+6. Back""")
 
-        bookOption = input(">")
+        bookOption = input("> ")
 
         if bookOption == "1" or bookOption.upper() == "NAME":
             book()
-        elif bookOption == "2" or bookOption.upper() == "LIVE ACTION":
-            saveName(name, "Live Action Book")
+        elif bookOption == "2" or bookOption.upper() == "AUTHOR":
             bookAU.append(name)
             saveArray(bookAU, "bookAU")
             mainMenu()
-        elif bookOption == "3" or bookOption.upper() == "ANIMATED":
-            saveName(name, "Animated Book")
+        elif bookOption == "3" or bookOption.upper() == "SERIES":
             bookSE.append(name)
             saveArray(bookSE, "bookSE")
             mainMenu()
-        elif bookOption == "4" or bookOption.upper() == "NOT SURE":
-            saveName(name, "Not Sure Book")
+        elif bookOption == "4" or bookOption.upper() == "SINGLE":
             bookSI.append(name)
             saveArray(bookSI, "bookSI")
+            mainMenu()
+        elif bookOption == "5" or bookOption.upper() == "NOT SURE":
+            bookNS.append(name)
+            saveArray(bookNS, "bookNS")
             mainMenu()
         elif bookOption == "5" or bookOption.upper() == "BACK":
             addRec()
 
 def hobby():
     name = input("""
-Add Name:
+Add Hobby Name:
 > """)
     
     while True:
         print(f"""
+Hobby:
 1. Current Name: {name}
 2. Save
 3. Back""")
 
-        hobbyOption = input(">")
+        hobbyOption = input("> ")
 
         if hobbyOption == "1" or hobbyOption.upper() == "NAME":
             hobby()
         elif hobbyOption == "2" or hobbyOption.upper() == "SAVE":
-            saveName(name, "Hobby")
             hobby.append(name)
             saveArray(hobby, "hobby")
             mainMenu()
@@ -426,26 +614,30 @@ Add Name:
 
 def project():
     name = input("""
-Add Name:
+Add Project Name:
 > """)
     
     while True:
         print(f"""
+Project:
 1. Current Name: {name}
 2. Save
 3. Back""")
 
-        projectOption = input(">")
+        projectOption = input("> ")
 
         if projectOption == "1" or projectOption.upper() == "NAME":
             project()
         elif projectOption == "2" or projectOption.upper() == "SAVE":
-            saveName(name, "Project")
             project.append(name)
             saveArray(project, "project")
             mainMenu()
         elif projectOption == "3" or projectOption.upper() == "BACK":
             addRec()
+
+
+
+
 
 initialise()
 while True:
