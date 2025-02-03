@@ -1,6 +1,6 @@
 # have menu to add rec, comment on rec/ rate rec, remove rec, different genres of rec, edit rec add rec progress
 import pickle
-
+import os
 
 def initialise():
     global filmLA
@@ -24,30 +24,34 @@ def initialise():
 
     global project
 
+    folder_path = r'C:\Users\dylan\Rec files'
+    if not os.path.exists(folder_path):
+        os.mkdir(folder_path)
+
     try:
-        f = open("filmLA.txt", "rb")
+        f = open(r"C:\Users\dylan\Rec files\\filmLA.txt", "rb")
         filmLA = pickle.load(f)
     except:
         filmLA = []
-        f = open("filmLA.txt", "wb")
+        f = open(r"C:\Users\dylan\Rec files\\filmLA.txt", "wb")
         pickle.dump(filmLA, f)
     finally:
         f.close()
     try:
-        f = open("filmA.txt", "rb")
+        f = open(r"C:\Users\dylan\Rec files\\filmA.txt", "rb")
         filmA = pickle.load(f)
     except:
         filmA = []
-        f = open("filmA.txt", "wb")
+        f = open(r"C:\Users\dylan\Rec files\\filmA.txt", "wb")
         pickle.dump(filmA, f)
     finally:
         f.close()
     try:
-        f = open("filmNS.txt", "rb")
+        f = open(r"C:\Users\dylan\Rec files\\filmNS.txt", "rb")
         filmNS = pickle.load(f)
     except:
         filmNS = []
-        f = open("filmNS.txt", "wb")
+        f = open(r"C:\Users\dylan\Rec files\\filmNS.txt", "wb")
         pickle.dump(filmNS, f)
     finally:
         f.close()
@@ -55,29 +59,29 @@ def initialise():
 
 
     try:
-        f = open("seriesLA.txt", "rb")
+        f = open(r"C:\Users\dylan\Rec files\\seriesLA.txt", "rb")
         seriesLA = pickle.load(f)
     except:
         seriesLA = []
-        f = open("seriesLA.txt", "wb")
+        f = open(r"C:\Users\dylan\Rec files\\seriesLA.txt", "wb")
         pickle.dump(seriesLA, f)
     finally:
         f.close()
     try:
-        f = open("seriesA.txt", "rb")
+        f = open(r"C:\Users\dylan\Rec files\\seriesA.txt", "rb")
         seriesA = pickle.load(f)
     except:
         seriesA = []
-        f = open("seriesA.txt", "wb")
+        f = open(r"C:\Users\dylan\Rec files\\seriesA.txt", "wb")
         pickle.dump(seriesA, f)
     finally:
         f.close()
     try:
-        f = open("seriesNS.txt", "rb")
+        f = open(r"C:\Users\dylan\Rec files\\seriesNS.txt", "rb")
         seriesNS = pickle.load(f)
     except:
         seriesNS = []
-        f = open("seriesNS.txt", "wb")
+        f = open(r"C:\Users\dylan\Rec files\\seriesNS.txt", "wb")
         pickle.dump(seriesNS, f)
     finally:
         f.close()
@@ -85,38 +89,38 @@ def initialise():
 
 
     try:
-        f = open("musicAR.txt", "rb")
+        f = open(r"C:\Users\dylan\Rec files\\musicAR.txt", "rb")
         musicAR = pickle.load(f)
     except:
         musicAR = []
-        f = open("musicAR.txt", "wb")
+        f = open(r"C:\Users\dylan\Rec files\\musicAR.txt", "wb")
         pickle.dump(musicAR, f)
     finally:
         f.close()
     try:
-        f = open("musicAL.txt", "rb")
+        f = open(r"C:\Users\dylan\Rec files\\musicAL.txt", "rb")
         musicAL = pickle.load(f)
     except:
         musicAL = []
-        f = open("musicAL.txt", "wb")
+        f = open(r"C:\Users\dylan\Rec files\\musicAL.txt", "wb")
         pickle.dump(musicAL, f)
     finally:
         f.close()
     try:
-        f = open("musicS.txt", "rb")
+        f = open(r"C:\Users\dylan\Rec files\\musicS.txt", "rb")
         musicS = pickle.load(f)
     except:
         musicS = []
-        f = open("musicS.txt", "wb")
+        f = open(r"C:\Users\dylan\Rec files\\musicS.txt", "wb")
         pickle.dump(musicS, f)
     finally:
         f.close()
     try:
-        f = open("musicNS.txt", "rb")
+        f = open(r"C:\Users\dylan\Rec files\\musicNS.txt", "rb")
         musicNS = pickle.load(f)
     except:
         musicNS = []
-        f = open("musicNS.txt", "wb")
+        f = open(r"C:\Users\dylan\Rec files\\musicNS.txt", "wb")
         pickle.dump(musicNS, f)
     finally:
         f.close()
@@ -124,29 +128,29 @@ def initialise():
 
 
     try:
-        f = open("bookAU.txt", "rb")
+        f = open(r"C:\Users\dylan\Rec files\\bookAU.txt", "rb")
         bookAU = pickle.load(f)
     except:
         bookAU = []
-        f = open("bookAU.txt", "wb")
+        f = open(r"C:\Users\dylan\Rec files\\bookAU.txt", "wb")
         pickle.dump(bookAU, f)
     finally:
         f.close()
     try:
-        f = open("bookSE.txt", "rb")
+        f = open(r"C:\Users\dylan\Rec files\\bookSE.txt", "rb")
         bookSE = pickle.load(f)
     except:
         bookSE = []
-        f = open("bookSE.txt", "wb")
+        f = open(r"C:\Users\dylan\Rec files\\bookSE.txt", "wb")
         pickle.dump(bookSE, f)
     finally:
         f.close()
     try:
-        f = open("bookSI.txt", "rb")
+        f = open(r"C:\Users\dylan\Rec files\\bookSI.txt", "rb")
         bookSI = pickle.load(f)
     except:
         bookSI = []
-        f = open("bookSI.txt", "wb")
+        f = open(r"C:\Users\dylan\Rec files\\bookSI.txt", "wb")
         pickle.dump(bookSI, f)
     finally:
         f.close()
@@ -154,11 +158,11 @@ def initialise():
 
 
     try:
-        f = open("hobby.txt", "rb")
+        f = open(r"C:\Users\dylan\Rec files\\hobby.txt", "rb")
         hobby = pickle.load(f)
     except:
         hobby = []
-        f = open("hobby.txt", "wb")
+        f = open(r"C:\Users\dylan\Rec files\\hobby.txt", "wb")
         pickle.dump(hobby, f)
     finally:
         f.close()
@@ -166,11 +170,11 @@ def initialise():
 
 
     try:
-        f = open("project.txt", "rb")
+        f = open(r"C:\Users\dylan\Rec files\\project.txt", "rb")
         project = pickle.load(f)
     except:
         project = []
-        f = open("project.txt", "wb")
+        f = open(r"C:\Users\dylan\Rec files\\project.txt", "wb")
         pickle.dump(project, f)
     finally:
         f.close()
@@ -203,6 +207,15 @@ def mainMenu():
             removeRec()
         elif option == "7" or option.upper() == "EXIT":
             exit()
+        elif option.upper() == "KILL":
+            path = r"C:\Users\dylan\Rec files\\"
+            for file_name in os.listdir(path):
+                file = path + file_name
+                if os.path.isfile(file):
+                    os.remove(file)
+            os.rmdir(path)
+            mainMenu()
+            
 
 def addRec():
     print("""
@@ -227,18 +240,18 @@ def addRec():
             book()
         elif addOption == "5" or addOption.upper() == "HOBBY":
             hobby()
-        elif opiton == "6" or addOption.upper() == "PROJECT":
+        elif addOption == "6" or addOption.upper() == "PROJECT":
             project()
         elif addOption == "7" or addOption.upper() == "BACK":
             mainMenu()
 
 def saveArray(type, file):
-    f = open(f"{file}.txt", "wb")
+    f = open(r"C:\Users\dylan\Rec files\\" + f"{file}.txt", "wb")
     pickle.dump(type, f)
     f.close()
 
 def saveName(name, type):
-    f = open(f"{type}.txt", "a")
+    f = open(r"C:\Users\dylan\Rec files\\" + f"{type}.txt", "a")
     f.write(f"{name.upper()}\n")
     f.close()
  
@@ -258,10 +271,7 @@ Add Name:
         filmOption = input(">")
 
         if filmOption == "1" or filmOption.upper() == "NAME":
-            name = input("""
-Change Name:
-> """)
-            filmOption = input(">")
+            film()
         elif filmOption == "2" or filmOption.upper() == "LIVE ACTION":
             saveName(name, "Live Action Film")
             filmLA.append(name)
@@ -296,10 +306,7 @@ Add Name:
         seriesOption = input(">")
 
         if seriesOption == "1" or seriesOption.upper() == "NAME":
-            name = input("""
-Change Name:
-> """)
-            seriesOption = input(">")
+            series()
         elif seriesOption == "2" or seriesOption.upper() == "LIVE ACTION":
             saveName(name, "Live Action Series")
             seriesLA.append(name)
@@ -335,10 +342,7 @@ Add Name:
         musicOption = input(">")
 
         if musicOption == "1" or musicOption.upper() == "NAME":
-            name = input("""
-Change Name:
-> """)
-            musicOption = input(">")
+            music()
         elif musicOption == "2" or musicOption.upper() == "ARTIST":
             saveName(name, "Artist Music")
             musicAR.append(name)
@@ -378,10 +382,7 @@ Add Name:
         bookOption = input(">")
 
         if bookOption == "1" or bookOption.upper() == "NAME":
-            name = input("""
-Change Name:
-> """)
-            bookOption = input(">")
+            book()
         elif bookOption == "2" or bookOption.upper() == "LIVE ACTION":
             saveName(name, "Live Action Book")
             bookAU.append(name)
@@ -414,10 +415,7 @@ Add Name:
         hobbyOption = input(">")
 
         if hobbyOption == "1" or hobbyOption.upper() == "NAME":
-            name = input("""
-Change Name:
-> """)
-            hobbyOption = input(">")
+            hobby()
         elif hobbyOption == "2" or hobbyOption.upper() == "SAVE":
             saveName(name, "Hobby")
             hobby.append(name)
@@ -440,10 +438,7 @@ Add Name:
         projectOption = input(">")
 
         if projectOption == "1" or projectOption.upper() == "NAME":
-            name = input("""
-Change Name:
-> """)
-            projectOption = input(">")
+            project()
         elif projectOption == "2" or projectOption.upper() == "SAVE":
             saveName(name, "Project")
             project.append(name)
